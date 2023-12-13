@@ -3,6 +3,7 @@ package com.serenitydojo.calculator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class Calculator {
     public int evaluate(String expression) throws IllegalMathsOperatorException {
         expression = expression.trim().replaceAll("\\s+","");
@@ -49,5 +50,11 @@ public class Calculator {
             throw new IllegalMathsOperatorException("Invalid Operator");
         }
         return result;
+    }
+
+    public class IllegalMathsOperatorException extends Exception{
+        public IllegalMathsOperatorException(String message){
+            super(message);
+        }
     }
 }
